@@ -10,6 +10,8 @@
 ````
 - flask
 - flask bootstrap
+- flask WtForms
+- flask-login and bcrypt
 ````
 ### concepts
 ```` 
