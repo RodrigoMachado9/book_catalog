@@ -15,9 +15,10 @@
 - oop
 - async
 ````
-### database - nosql
+### database
 ```` 
-- mongo
+- sqlAlchemy ORM
+- postgreSql
 ````
 ### markdown language
 ````
