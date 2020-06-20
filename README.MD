@@ -1,6 +1,6 @@
 # :. web development
 
-###technologies
+### technologies
 ````
 - python 3.6
 - javascript
