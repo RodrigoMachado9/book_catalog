@@ -6,28 +6,28 @@
 - javascript
 - docker compose
 ````
-###framework
+### framework
 ````
 - flask
 ````
-###concepts
+### concepts
 ```` 
 - oop
 - async
 ````
-###database - nosql
+### database - nosql
 ```` 
 - mongo
 ````
-###markdown language
+### markdown language
 ````
 - html 5
 ````
-###style
+### style
 ````
 - css 3
 ````
-###deploy
+### deploy
 ````
 - heroku
 - scalable
