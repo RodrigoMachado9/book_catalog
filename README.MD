@@ -12,6 +12,7 @@
 - flask bootstrap
 - flask WtForms
 - flask-login and bcrypt
+- flask-blueprints
 ````
 ### concepts
 ```` 
@@ -35,4 +36,15 @@
 ````
 - heroku
 - scalable
+- aws s3
+````
+### configuration
+````
+    - pip3 install virtualenv
+    - mkdir book_catalog
+        - virtualenv book_catalog
+        - source book_catalog/bin/activate
+ or
+    - cd ~/
+    - git clone https://github.com/RodrigoMachado9/book_catalog.git
 ````
