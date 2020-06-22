@@ -28,5 +28,17 @@ def rendering_template():
     return render_template('index.html')
 
 
+@app.route('/watch')
+def demo_jinja2_template():
+    movie_list = ['autopsy of jane done',
+                  'neon demon',
+                  'ghost  in a shell',
+                  'kong: skull island',
+                  'john wick 2',
+                  'spiderman - homecoming']
+
+    return render_template('movies.html', movies=movie_list, name='Rodrigo')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
