@@ -37,7 +37,7 @@ def demo_jinja2_template():
                   'john wick 2',
                   'spiderman - homecoming']
 
-    return render_template('movies.html', movies=movie_list, name='Rodrigo')
+    return render_template('movies.html', movies=movie_list, name='rodrigo')
 
 
 @app.route('/tables')
@@ -52,7 +52,7 @@ def demo_jinja2_of_dict():
     }
     return render_template('table_data.html',
                            movies=movies_dict,
-                           name='Machado')
+                           name='rmachado')
 
 
 if __name__ == '__main__':
