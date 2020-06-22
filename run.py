@@ -28,5 +28,32 @@ def rendering_template():
     return render_template('index.html')
 
 
+@app.route('/watch')
+def demo_jinja2_template():
+    movie_list = ['autopsy of jane done',
+                  'neon demon',
+                  'ghost  in a shell',
+                  'kong: skull island',
+                  'john wick 2',
+                  'spiderman - homecoming']
+
+    return render_template('movies.html', movies=movie_list, name='rodrigo')
+
+
+@app.route('/tables')
+def demo_jinja2_of_dict():
+    movies_dict = {
+        'autopsy of jane done': 02.14,
+        'neon demon': 3.20,
+        'ghost  in a shell': 1.50,
+        'kong: skull island': 3.50,
+        'john wick 2': 02.52,
+        'spiderman - homecoming': 1.48
+    }
+    return render_template('table_data.html',
+                           movies=movies_dict,
+                           name='rmachado')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
