@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie durations</title>
+</head>
+<body>
+<h2>this collection belongs to {{ name }}</h2>
+<table>
+    <tr>
+        <th>movies</th>
+        <th>length</th>
+        <th>comments</th>
+    </tr>
+
+    {% for movie, length in movies.items() %}
+        <tr>
+            <td> {{ movie }}</td>
+            <td> {{ length }}</td>
+            {% if length <= 2 %}
+                <td>short</td>
+            {% elif length >= 2 and length <=3 %}
+                <td>medium</td>
+            {% else %}
+                <td>long</td>
+            {% endif %}
+        </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
