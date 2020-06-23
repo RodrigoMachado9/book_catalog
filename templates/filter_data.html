@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Data filters </title>
+</head>
+<body>
+
+    <h2> working with jinja2 filters </h2>
+    {% for movie, duration in movies|dictsort( false, 'value') %}
+        <ul>
+            <li>{{ movie|title}}: {{ duration|round(1)}}</li>
+        </ul>
+    {% endfor  %}
+    <hr> <!--here is line-->
+</body>
+</html>
