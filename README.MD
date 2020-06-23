@@ -1,4 +1,4 @@
-# :. web development - book catalog
+# :. web development - book catalog :books: 
 
 ### technologies
 ````
