@@ -4,11 +4,11 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 app.config.update(
-    SECRET_KEY='topsecret',
-    SQLALCHEMY_DATABASE_URI='postgresql://postgresql:topsecret@localhost/catalog_db',
+    SECRET_KEY='postgres',
+    SQLALCHEMY_DATABASE_URI='postgresql://postgres:postgres@localhost/catalog_db',
     SQLALCHEMY_TRACK_MODIFICATION=False)
 
-sb = SQLAlchemy(app)
+db = SQLAlchemy(app)
 
 
 @app.route('/index')
@@ -92,5 +92,20 @@ def jinja2_macros():
     return render_template('using_macros.html', movies=movies_dict)
 
 
+class Publication(db.Model):
+    __tablename__ = 'publication'
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80), nullable=False)
+
+    def __init__(self, id, name):
+        self.id = id
+        self.name = name
+
+    def __repr__(self):
+        return "The id is {}, name is {}".format(self.id, self.name)
+
+
 if __name__ == '__main__':
+    db.create_all()
     app.run(debug=True)
