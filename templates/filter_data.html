@@ -13,5 +13,23 @@
         </ul>
     {% endfor  %}
     <hr> <!--here is line-->
+    <ol type="1">
+        <li> name :             {{ name|default('value not defined', true) }}</li> <br>
+        <li> capitalize case :  {{ film|capitalize }}</li> <br>
+        <li> length :           {{ movies|length }} items in the dictionary</li> <br>
+        <li> first item :       {{ movies|first }}</li> <br>
+        <li> make a list :      {{ film|list }}</li> <br>
+        <li> replace data :     {{ film|replace('machado', 'cookie')|upper }}</li> <br>
+
+    </ol>
+    <hr>
+
+    <h2> more filters </h2>
+    <p>
+        filters are like little utilities that help us modify the variables or their state.
+        for a complete list  of built-in jinja2 filters, check-out the following link:
+    </p>
+
+
 </body>
 </html>

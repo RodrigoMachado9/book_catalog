@@ -67,7 +67,7 @@ def filter_data():
     }
     return render_template('filter_data.html',
                            movies=movies_dict,
-                           name=None,
+                           name="machado",
                            film='a new day machado')
 
 
