@@ -68,7 +68,7 @@ def filter_data():
     return render_template('filter_data.html',
                            movies=movies_dict,
                            name=None,
-                           film='a christmas machado')
+                           film='a new day machado')
 
 
 if __name__ == '__main__':
