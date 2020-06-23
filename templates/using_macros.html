@@ -1,0 +1,14 @@
+{% import 'macros.html' as my_macros %}
+<!--importing macros in macros.html-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>dictionary data displayed</title>
+    </head>
+
+    <h2>working with macros</h2>
+    <body>
+        {{ my_macros.render_dict(movies) }}
+    </body>
+
+</html>
