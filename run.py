@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, render_template, request, session, g
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -12,10 +12,23 @@ app.config.update(
 db = SQLAlchemy(app)
 
 
+# beautiful.  running function code before requested.
+@app.before_request
+def some_function():
+    g.string = "<br> This code ran before any request"
+
+
+@app.route('/session')
+def session_data():
+    if "name" not in session:
+        session["name"] = "rmachado"
+    return render_template("session.html", session=session, name=session["name"])
+
+
 @app.route('/index')
 @app.route('/')
 def index():
-    return "<body><h1>x</h1><h2>y</h2><h3>z</h3></body>"
+    return "Hello ! <br>" + g.string
 
 
 @app.route('/new')
@@ -99,12 +112,11 @@ class Publication(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
 
-    def __init__(self, id, name):
-        self.id = id
+    def __init__(self, name):
         self.name = name
 
     def __repr__(self):
-        return "The id is {}, name is {}".format(self.id, self.name)
+        return "The name is {}".format(self.name)
 
 
 class Book(db.Model):
