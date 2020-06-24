@@ -1,2 +1,4 @@
 .idea/
 .macetes/
+.story/
+__pycache__/
