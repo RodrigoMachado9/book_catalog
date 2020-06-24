@@ -1,4 +1,4 @@
-# :. web development - book catalog :books: dragon: 
+# :. web development - book catalog :books: :dragon: 
 
 ### technologies
 ````
