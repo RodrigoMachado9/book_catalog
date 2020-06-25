@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <h4>Books by {{ publisher.name }}</h4>
+    <ol>
+        {% for book in publisher_books %}
+            <li type="1">
+                {{ book.title }} by {{ book.author }}
+            </li>
+        {% endfor %}
+    </ol>
+
 </body>
 </html>

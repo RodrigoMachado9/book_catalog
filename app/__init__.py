@@ -12,6 +12,6 @@ def create_app(config_type):  # dev, test or prod
     app.config.from_pyfile(configuration)
     db.init_app(app)
 
-    from app.catalog import bp  # register blueprint
-    app.register_blueprint(bp)
+    from app.catalog import main  # register blueprint
+    app.register_blueprint(main)
     return app
