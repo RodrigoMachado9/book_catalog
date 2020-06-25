@@ -1,9 +1,12 @@
-# app/__init__.py
+# app/auth/models.py
+
 from datetime import datetime
-from app import db, bcrypt
+from app import db, bcrypt  # app/__init__.py
+from flask_login import UserMixin
+from app import login_manager
 
 
-class User(db.Model):
+class User(UserMixin, db.Model):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -12,14 +15,20 @@ class User(db.Model):
     user_password = db.Column(db.String(80))
     created_at = db.Column(db.DateTime, default=datetime.now)
 
-    # class method  belong to a class but are not associated with any class instance
+    def check_password(self, password):
+        return bcrypt.check_password_hash(self.user_password, password)
+
     @classmethod
     def create_user(cls, user, email, password):
-        user = cls(
-            user_name=user,
-            user_email=email,
-            user_password=bcrypt.generate_password_hash(password).decode('utf-8')
-        )
+        user = cls(user_name=user,
+                   user_email=email,
+                   user_password=bcrypt.generate_password_hash(password).decode('utf-8'))
+
         db.session.add(user)
         db.session.commit()
         return user
+
+
+@login_manager.user_loader
+def load_user(id):
+    return User.query.get(int(id))
