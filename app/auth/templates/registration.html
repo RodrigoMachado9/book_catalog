@@ -1,35 +1,14 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+
     <div class="container form">
         <h4> Register Here </h4>
-    </div>
-    <div class="container form">
-        <hr>
-        <br>
-        <form action="/register" method="post">
-            {{ form.hidden_tag() }}
+        <hr><br><br>
 
-            <div class="form-group">
-                {{ form.name.label }}
-                {{ form.name }}
-            </div>
-            <div class="form-group">
-                {{ form.email.label }}
-                {{ form.email }}
-            </div>
-            <br>
-            <div class="form-group">
-                {{ form.submit(class='btn btn-primary') }}
-            </div>
-        </form>
-        <br>
-            {% if (name) and (email) %}
-                <p> Hello {{ name }}</p>
-                <p> your email with us is {{ email }}</p>
-            {% endif %}
-
-            {{ request.form }}
+        {{ form.hidden_tag() }}
+        {{ wtf.quick_form(form) }}
 
     </div>
+
 {% endblock content %}

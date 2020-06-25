@@ -16,5 +16,10 @@ def register_user():
             email=form.email.data,
             password=form.password.data)
         flash('Registration Successful')
-        return redirect(url_for('at.login_user'))    
+        return redirect(url_for('authentication.login_user'))
     return render_template('registration.html', form=form)
+
+
+@at.route('/login', methods=['GET', 'POST'])
+def login_user():
+    return render_template('login.html')

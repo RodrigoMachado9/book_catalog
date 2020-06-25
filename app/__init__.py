@@ -19,14 +19,14 @@ def create_app(config_type):  # dev, test or prod
     app.config.from_pyfile(configuration)
     db.init_app(app)
     bootstrap.init_app(app)
-    login_manager.init_app(app)
+    # login_manager.init_app(app)
     bcrypt.init_app(app)
 
     from app.catalog import main  # register blueprint
     app.register_blueprint(main)
 
-    from app.auth import authentication
-    app.register_blueprint(authentication)  # flask wtf
+    from app.auth import authentication as at
+    app.register_blueprint(at)  # flask wtf
 
     return app
 
