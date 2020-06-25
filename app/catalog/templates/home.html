@@ -1,4 +1,4 @@
-<!--catalog/templates/home.html-->
+<!--app/catalog/templates/home.html-->
 {% extends 'layout.html' %}
 
 
@@ -14,6 +14,7 @@
                 <p> Average Rating: {{ book.avg_rating }} </p>
                 <p> Pages: {{ book.num_pages }} </p>
                 <p><a href="{{ url_for('main.display_publisher', publisher_id=book.pub_id) }}">Publisher ID: {{ book.pub_id }}</a></p>
+                <span class="label label-success"><a href="{{ url_for('main.create_book', pub_id=book.pub_id) }}" style="color: floralwhite"> create </a></span>
                 <span class="label label-primary"><a href="{{ url_for('main.edit_book', book_id=book.id) }}" style="color: floralwhite"> edit </a></span>
                 <span class="label label-info"><a href="{{ url_for('main.delete_book', book_id=book.id) }}" style="color: floralwhite"> delete </a></span>
                 <br>
