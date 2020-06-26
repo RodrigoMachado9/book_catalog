@@ -3,7 +3,6 @@ from wtforms import StringField, SubmitField, IntegerField, FloatField
 from wtforms.validators import DataRequired
 
 
-
 class EditBookForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired()])
     book_format = StringField('Format', validators=[DataRequired()])
